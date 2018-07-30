@@ -1,8 +1,6 @@
 import numpy as np
 import pandas as pd
 from sklearn import metrics
-#import input_data
-#import input_data_old
 import input_data
 import time
 import pickle
@@ -48,7 +46,6 @@ def get_label(trainY):
 
 def get_data_test(INPUT_PATH):
 
-	#inp = input_data_old.inputter(INPUT_PATH)
 	inp = input_data.inputter(INPUT_PATH)
 	
 	testX, testY = inp.getTestData(mergeAttackLabelsWithAtleast=False)
@@ -60,7 +57,6 @@ def get_data_test(INPUT_PATH):
 
 def get_data_valid(INPUT_PATH):
 
-	#inp = input_data_old.inputter(INPUT_PATH)
 	inp = input_data.inputter(INPUT_PATH)
 	
 	validX, validY = inp.getValidationData(mergeAttackLabelsWithAtleast=False)
@@ -72,7 +68,6 @@ def get_data_valid(INPUT_PATH):
 
 def get_data_train(INPUT_PATH):
 
-	#inp = input_data_old.inputter(INPUT_PATH)
 	inp = input_data.inputter(INPUT_PATH)
 	
 	trainX, trainY = inp.getTrainData(mergeAttackLabelsWithAtleast=False)
@@ -83,9 +78,6 @@ def get_data_train(INPUT_PATH):
 	return trainX_reshape,trainY_reshape
 
 start_time = time.time()
-
-#INPUT_PATH ='data/trafficData/esNet_att30*'
-#trainx,trainy,validx,validy,testx,testy = get_data(INPUT_PATH)
 
 if __name__ == '__main__':
 
@@ -134,7 +126,6 @@ if __name__ == '__main__':
 			cfg_RF = Random_Forest.loadConfig_RF(configPath_RF)
 
 			Random_Forest.run_rf_once(trainx,trainy,validx,validy)
-			#Random_Forest.run_rf_once(trainx,trainy, testx,testy)
 
 			printConfig_RF(output_dir,cfg_RF)
 			print('Configs stored in {}'.format(output_dir))
