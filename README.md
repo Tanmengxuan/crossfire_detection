@@ -8,5 +8,7 @@ MS Kang., et al. **"The crossfire attack."** *2013 IEEE Symposium on Security an
 Detection Models Used:
 
 Bidirectional Lstm (keras)
+
 Random Forest (scikit-learn)
+
 SVM (scikit-learn)
